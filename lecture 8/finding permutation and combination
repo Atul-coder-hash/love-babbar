@@ -1,0 +1,81 @@
+                                      // MY way
+
+
+
+#include<iostream>
+using namespace std;
+
+int upperfact(int a)
+{int act=1;
+    for(int i=1;i<=a;i++)
+{
+    act = act*i;
+}
+return(act);
+    
+}
+
+int lowerfact(int n,int r)
+{
+    int fact=1;
+    for(int i=1;i<=r;i++)
+    {
+        fact = fact*i;
+    }
+    int c= n-r;
+    int fact2=1;
+    for(int j=1;j<=c;j++)
+    {
+        fact2=fact2*j;
+    }
+    return(fact*fact2);
+    
+}
+int main()
+{int n,r;
+cout<<"enter n:-";
+cin>>n;
+
+cout<<"enter r:-";
+cin>>r;
+
+int c = upperfact(n);
+int d= lowerfact(n,r);
+
+cout<<"value of ncr:-"<<c/d;    
+}
+
+
+                                                    // optimized solution
+#include<iostream>
+using namespace std;
+
+int fact(int n)
+{
+    int fact =1;
+    for(int i=1;i<=n;i++)
+    {
+        fact = fact*i;
+        
+    }
+    return(fact);
+}
+
+int ncr(int n,int r)
+{
+    int num = fact(n);
+    int denominator = fact(r)*fact(n-r);
+    return(num/denominator);
+}
+
+
+int main()
+{
+int n,r;
+cout<<"enter value of n:-";
+cin>>n;
+cout<<"enter value of r:-";
+cin>>r;
+int c = ncr(n,r);
+cout<<"value of ncr :-"<<c<<endl;
+}
