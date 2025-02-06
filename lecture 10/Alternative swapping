@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void swaparray(int a[], int size) {
+void printarray(int a[], int size) {
     for (int i = 0; i < size; i++) {
         cout << a[i] << " ";
     }
@@ -19,7 +19,7 @@ void swap(int a[], int size) {
         end=end+2;
     }
     cout << " Alternative swaped array:-";
-    swaparray(a, size);
+    printarray(a, size);
      
 }
 
@@ -29,7 +29,7 @@ int main() {
     
     
     cout<<"original array:-";
-    swaparray(a,size);
+    printarray(a,size);
 
 
     swap(a, size);
