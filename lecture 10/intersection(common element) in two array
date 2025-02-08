@@ -5,13 +5,14 @@ using namespace std;
 void intersection(int a[],int b[], int size) {
 
     int c;
+    cout<<"common elements:-";
     for(int i=0;i<size;i++)
     {
         for(int j=0;j<size;j++)
         {
             if(a[i]==b[j])
             {
-               cout<<a[i]<<endl;
+               cout<<" "<<a[i];
             }
         }
     }
