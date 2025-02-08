@@ -1,3 +1,5 @@
+                                          // Bootforce solution
+
 #include <iostream>
 using namespace std;
 
@@ -22,6 +24,76 @@ void intersection(int a[],int b[], int size) {
 int main() {
     int a[] = {1,2,3,4};
     int b[]={2,4,6,8};
+    int size = sizeof(a) / sizeof(int);
+    intersection(a,b, size);
+    return 0;
+}
+
+
+                                                            // Optimized solution 1
+#include <iostream>
+using namespace std;
+
+
+void intersection(int a[],int b[], int size) {
+
+    int c;
+    cout<<"common elements:-";
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            if(a[i]<b[j])
+            {
+               break;
+            }
+            if(a[i]==b[j])
+            {
+                cout<<a[i];
+            }
+        }
+    }
+}
+
+int main() {
+    int a[] = {1,4,5};
+    int b[]={3,4,5};
+    int size = sizeof(a) / sizeof(int);
+    intersection(a,b, size);
+    return 0;
+}
+                                                // optimised solution 2
+#include <iostream>
+using namespace std;
+
+
+void intersection(int a[],int b[], int size) {
+
+    int c,i=0,j=0;
+    cout<<"common elements:-";
+
+    while(i<size&&j<size)
+    {
+        if(a[i]<b[j])
+        {
+            i++;
+        }
+        if(a[i]==b[j])
+        {cout<<a[i];
+            i++;
+            j++;}
+        if(a[i]>b[j])
+        {
+            j++;
+        }
+
+    }
+    
+}
+
+int main() {
+    int a[] = {1,4,5};
+    int b[]={3,4,5};
     int size = sizeof(a) / sizeof(int);
     intersection(a,b, size);
     return 0;
