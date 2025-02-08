@@ -1,0 +1,43 @@
+
+#include <iostream>
+using namespace std;
+
+
+void printarray(int a[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;  
+}
+
+void count(int a[], int size) {
+
+    int count=0;
+    int num =a[2];
+    
+   for(int i=0;i<size;i++)
+   {
+    if(num==a[i])
+    {
+        count++;
+    }
+   }
+   cout<<"number "<<num<<":-";
+   cout<<count;
+}
+
+int main() {
+    int a[] = {1,2,3,2,2,8,6,7,3};
+    int size = sizeof(a) / sizeof(int);
+    
+    
+    // cout<<"original array:-";
+    // printarray(a,size);
+
+
+    count(a, size);
+
+    
+
+    return 0;
+}
