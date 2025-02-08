@@ -1,43 +1,58 @@
-
+                                                            //Sasta solution
 #include <iostream>
 using namespace std;
 
+void count(int a[],int size)
+{
+    for(int i=0;i<size;i++)
+    {   int temp=0;
+        for(int j=0;j<size;j++)
+        {if(a[i]==a[j])
+            {
+                temp++;
 
-void printarray(int a[], int size) {
-    for (int i = 0; i < size; i++) {
-        cout << a[i] << " ";
+            }
+        }
+
+        if(temp>=2)
+        {
+        continue;
+        }
+        else{
+            cout<<"unique element ";
+        }
+        cout<<"occuring of "<<a[i]<<" is "<<temp<<" times "<<endl;
     }
-    cout << endl;  
 }
 
-void count(int a[], int size) {
 
-    int count=0;
-    int num =a[2];
-    
-   for(int i=0;i<size;i++)
-   {
-    if(num==a[i])
-    {
-        count++;
-    }
-   }
-   cout<<"number "<<num<<":-";
-   cout<<count;
+int main()
+{
+    int a[]={3,7,2,2,7,3,4};
+    int size = sizeof(a)/sizeof(int);
+
+    count(a,size);
+   
 }
 
-int main() {
-    int a[] = {1,2,3,2,2,8,6,7,3};
-    int size = sizeof(a) / sizeof(int);
-    
-    
-    // cout<<"original array:-";
-    // printarray(a,size);
 
+                                                        // Optimised solution(using xor concept)
+#include <iostream>
+using namespace std;
 
-    count(a, size);
+int xort(int a[],int size)
+{int c =0;
+    for(int i=0;i<size;i++)
+    {   
+         c= c^a[i];
+    }
+    return c;
+}
+int main()
+{
+    int a[]={3,7,2,2,7,3,4};
+    int size = sizeof(a)/sizeof(int);
 
-    
-
-    return 0;
+    xort(a,size);
+   cout<<"unique element:-"<<xort(a,size);
 }
