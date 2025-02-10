@@ -23,6 +23,8 @@ void sort0and1(int a[],int size)
         if(a[i]==1&&a[j]==0&&i<j)// make sure i<j
         {
             swap(a[i],a[j]);
+            i++;
+            j--;
         }
     }
     printarray(a,size);
