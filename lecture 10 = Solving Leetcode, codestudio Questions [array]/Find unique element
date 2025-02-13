@@ -1,0 +1,58 @@
+                                                            //Sasta solution
+#include <iostream>
+using namespace std;
+
+void count(int a[],int size)
+{
+    for(int i=0;i<size;i++)
+    {   int temp=0;
+        for(int j=0;j<size;j++)
+        {if(a[i]==a[j])
+            {
+                temp++;
+
+            }
+        }
+
+        if(temp>=2)
+        {
+        continue;
+        }
+        else{
+            cout<<"unique element ";
+        }
+        cout<<"occuring of "<<a[i]<<" is "<<temp<<" times "<<endl;
+    }
+}
+
+
+int main()
+{
+    int a[]={3,7,2,2,7,3,4};
+    int size = sizeof(a)/sizeof(int);
+
+    count(a,size);
+   
+}
+
+
+                                                        // Optimised solution(using xor concept)
+#include <iostream>
+using namespace std;
+
+int xort(int a[],int size)
+{int c =0;
+    for(int i=0;i<size;i++)
+    {   
+         c= c^a[i];
+    }
+    return c;
+}
+int main()
+{
+    int a[]={3,7,2,2,7,3,4};
+    int size = sizeof(a)/sizeof(int);
+
+    xort(a,size);
+   cout<<"unique element:-"<<xort(a,size);
+}
