@@ -1,0 +1,41 @@
+#include<iostream>
+#include<vector>  // Header file for vector
+using namespace std;
+int main()
+{
+    vector<int> v; // Declaration of vector
+
+    vector<int> a(5,1); //a(size  of vector,initialisation of all elemnts in vector)  || agar apna ko phla size ptaha vector ka isa use kro..
+
+    cout<<"Capacity ->"<<v.capacity()<<endl; 
+
+    v.push_back(1); // adding element in vector
+    cout<<"Capacity ->"<<v.capacity()<<endl;
+
+    v.push_back(2);  // adding element in vector
+    cout<<"Capacity ->"<<v.capacity()<<endl;
+
+    v.push_back(3);   // adding element in vector
+    cout<<"Capacity ->"<<v.capacity()<<endl;
+
+    cout<<"Size:-"<<v.size()<<endl;  // size of vector
+
+
+    cout<<"Element at 2nd Index:-"<<v.at(2)<<endl;
+
+    cout<<"Front:-"<<v.front()<<endl; // return first element in vector
+    cout<<"Back:-"<<v.back()<<endl;   // return first element in vector
+
+    v.pop_back();    // delete the last element in vector
+
+    for(int i:v)    // after pop elements in vector
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+
+    v.clear();
+
+    cout<<v.size(); //after clear size
+}
