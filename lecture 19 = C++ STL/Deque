@@ -1,0 +1,32 @@
+#include<iostream>
+#include<deque>
+
+using namespace std;
+
+int main()
+{
+    deque<int> d;
+
+    d.push_back(1);  // inserting element from back side of deque
+    d.push_front(2);  // inserting element from front side of deque
+
+    //d.pop_front();  // deleting element from back side of deque
+   // d.pop_back();    //deleting element from back side of deque
+
+   cout<<"Print first Index Element:-"<<d.at(1)<<endl;
+
+   cout<<"Front "<<d.front()<<endl;
+   cout<<"Back "<<d.back()<<endl;
+
+   cout<<"Empty or not "<<d.empty()<<endl;
+
+   cout<<"before erase "<<d.size()<<endl;
+   d.erase(d.begin(),d.begin()+1);  
+   cout<<"after erase "<<d.size()<<endl;
+   for(int i:d)
+   {
+    cout<<i<<endl;
+   }
+
+
+}
