@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+void print(int a[],int size)
+{
+       for(int i=0;i<size;i++)
+       {
+              cout<<a[i]<<" ";
+       }
+}
+
+void sort(int a[],int size)
+{
+for(int i=0;i<size-1;i++)
+{int min=i;
+for(int j=i+1;j<size;j++){
+       {if(a[j]<a[min])
+              {min=j;}
+       }
+          
+      
+       swap(a[min],a[i]);
+}
+}
+print(a,size);
+}
+
+
+int main()
+{
+       int a[]={64,20,72,11,13,9};
+       int size=sizeof(a)/sizeof(int);
+       sort(a,size);
+}
