@@ -1,0 +1,67 @@
+                                                  //Sasta soltuion
+
+
+#include<iostream>
+using namespace std;
+
+void print(int a[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
+
+void bubble(int a[],int size)
+{
+    for(int j=size;j>=0;j--)
+    {
+for(int i=0;i<size-1;i++)
+{
+    if(a[i]>a[i+1])
+    {swap(a[i+1],a[i]);}
+}
+    }
+print(a,size);
+
+}
+int main(){
+    int a[]={10,1,7,6,14,9};
+   int size = sizeof(a)/sizeof(int);
+
+   bubble(a,size);
+}
+
+                                                      // Optimised solution
+
+#include<iostream>
+using namespace std;
+
+void print(int a[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
+
+void bubble(int a[],int size)
+{
+    for(int i=1;i<size-1;i++)
+    {
+for(int j=0;j<size-i;j++)
+{
+    if(a[j]>a[j+1])
+    {swap(a[j+1],a[j]);}
+}
+    }
+print(a,size);
+}
+
+int main(){
+    int a[]={10,1,7,6,14,9};
+   int size = sizeof(a)/sizeof(int);
+
+   bubble(a,size);
+}
+
