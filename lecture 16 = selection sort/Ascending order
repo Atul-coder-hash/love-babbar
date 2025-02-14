@@ -8,7 +8,7 @@ void print(int a[],int size)
        }
 }
 
-void sort(int a[],int size)
+void selection(int a[],int size)
 {
 for(int i=0;i<size-1;i++)
 {int min=i;
@@ -29,5 +29,5 @@ int main()
 {
        int a[]={64,20,72,11,13,9};
        int size=sizeof(a)/sizeof(int);
-       sort(a,size);
+       selection(a,size);
 }
