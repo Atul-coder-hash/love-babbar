@@ -50,7 +50,7 @@ void bubble(int a[],int size)
     for(int i=1;i<size-1;i++)        // for round 1 to n-1
     {
 for(int j=0;j<size-i;j++)
-{                                 //Process
+{                                 //Process element til n-1
     if(a[j]>a[j+1])
     {swap(a[j+1],a[j]);}
 }
