@@ -1,0 +1,33 @@
+#include<iostream>
+#include<map>
+
+using namespace std;
+
+int main()
+{
+    map<int,string> m;     // declaration of map
+    m[1]="Ashwani";        // inserting element in map
+    m[2]="Bishnoi";        // inserting element in map
+    m[3]="Tetarwal";       // inserting element in map
+
+    m.insert({5,"bheem"});  // inserting element in map
+
+    cout<<"before erase"<<endl;
+    for(auto i:m)
+    {
+        cout<<i.first<<" "<<i.second<<endl;
+
+    }
+
+    cout<<"finding -13 ->"<<m.count(-13)<<endl;         //finding element in map
+
+    m.erase(13);
+    cout<<"after erase"<<endl;
+    for(auto i:m)
+    {
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+
+
+
+}
