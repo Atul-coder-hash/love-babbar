@@ -3,7 +3,7 @@ using namespace std;
 
 bool iseven(int a)
 {
-    if(a&1)
+    if(a&1)       // This check least significant digit(LSB) if LSB is 1 then it is odd otherwise even   
     {
         return 0;
     }
