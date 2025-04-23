@@ -1,3 +1,6 @@
+                                                       # Without carrying lower/upper case
+
+
 #include<iostream>
 using namespace std;
 
@@ -46,4 +49,68 @@ int main()
     }
     
     
+}
+
+                                                       # With carrying upper/lower case
+
+#include<iostream>
+using namespace std;
+
+char lowercase(char ch)
+{
+       if(ch>='a'&&ch<='z')
+       {
+              return ch;
+       }
+       else
+       {
+              char temp = ch-'A'+'a';
+              return temp;
+       }
+}
+
+bool checkpalindrome(char ch[],int count)
+{
+
+     int s=0;  
+     int e= count-1;
+     
+    while(s<=e)
+    {
+           if(lowercase(ch[s])!=lowercase(ch[e]))
+           {
+                  return 0;
+           }
+           else
+           {
+                  s++;
+                  e--;
+           }
+           return 1;
+           
+    }
+}
+
+int main()
+{
+       char ch[10];
+       cout<<"enter:-";
+       cin>>ch;
+       
+       int count=0;
+        int i=0;
+        while(ch[i]!='\0')
+    {
+           count++;
+           i++;
+           
+    }
+    if(checkpalindrome(ch,count)==1)
+    {
+           cout<<"Palindrome";
+    }
+    else
+    {
+           cout<<"Not palindrome";
+    }
 }
