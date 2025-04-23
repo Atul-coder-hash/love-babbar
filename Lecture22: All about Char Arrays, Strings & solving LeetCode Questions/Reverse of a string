@@ -1,0 +1,55 @@
+                                                                    # solution 1
+
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+    char ch[10];
+    cout<<"enter your name";
+    cin>>ch;
+     int count=0;
+     int i=0;
+    while(ch[i]!='\0')
+    {
+           count++;
+           i++;
+           
+    }
+       int s=0;
+       int e=count-1;
+       while(s<e)
+       {
+              swap(ch[s],ch[e]);
+              
+              s++;
+              e--;
+              
+       }
+       cout<<ch;
+     
+}
+
+                                                                        solution 2
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+    char ch[10];
+    cout<<"enter your name";
+    cin>>ch;
+     int count=0;
+     for(int i=0;ch[i]!='\0';i++)
+     {
+         count++;
+       }
+       
+    for(int j=count;j>=0;j--)
+     {
+            cout<<ch[j];
+     }
+     
+}
