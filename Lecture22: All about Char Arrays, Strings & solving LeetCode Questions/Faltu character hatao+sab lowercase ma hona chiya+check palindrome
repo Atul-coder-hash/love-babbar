@@ -1,0 +1,151 @@
+                                                                  # My solution
+ 
+
+#include<iostream>
+using namespace std;
+
+//changing character to lowercase
+char lowercase(char ch)
+{
+       if(ch>='a'&&ch<='z')
+       {
+              return ch;
+       }
+       else
+       {
+              char temp = ch-'A'+'a';
+              return temp;
+       }
+}
+
+// checking palindrome
+bool checkpalindrome(char ch[],int count)
+{
+       int s=0;
+       int e=count-1;
+       while(s<=e)
+       {
+              
+              
+              if(ch[s]>='a'||ch[s]=='z'&&ch[s]>='A'||ch[s]<='Z'&&ch[s]>=0||ch[s]<=9)
+              {
+                     if(lowercase(ch[s])!=lowercase(ch[e]))
+                     {       
+                     return 0;
+                    
+                     }
+       
+              }
+              else
+              {
+               s++;      
+              }
+              
+              
+              if(ch[e]>='a'||ch[e]=='z'&&ch[e]>='A'||ch[e]<='Z'&&ch[e]>=0||ch[e]<=9)
+              {
+                     if(lowercase(ch[s])!=lowercase(ch[e]))
+                     {
+                     return 0;
+                    
+                     }
+       
+              }
+              else
+              {
+               e--;      
+              }
+              
+              
+              return 1;
+              
+              
+       }
+       
+}
+int main()
+{
+       char ch[10];
+       cout<<"enter character";
+       cin>>ch;
+       int count=0;
+       
+       int i=0;
+       while(ch[i]!='\0')
+       {
+              count++;
+              i++;
+       }
+       if(checkpalindrome(ch,count)==1)
+       {
+              cout<<"Palindrome";
+       }
+       else
+       {
+              cout<<"Not Palindrome";
+       }
+       
+}
+
+
+                                                                # Sir solution
+#include<string>
+#include<iostream>
+#include<vector>
+using namespace std;
+class Solution {
+private:
+    bool valid(char ch) {
+        if( (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')) {
+            return 1;
+        }
+        
+        return 0;
+    }
+    
+    char toLowerCase(char ch) {
+    if( (ch >='a' && ch <='z') || (ch >='0' && ch <='9') )
+        return ch;
+    else{
+        char temp = ch - 'A' + 'a';
+        return temp;
+    }
+}
+    bool checkPalindrome(string a) {
+    int s = 0;
+    int e = a.length()-1;
+
+    while(s<=e) {
+        if(a[s] != a[e])
+        {
+            return 0;       
+        }
+        else{
+            s++;
+            e--;
+        }
+    }
+    return 1;
+}
+public:
+    bool isPalindrome(string s) {
+        
+        //faltu character hatado
+        string temp = "";
+        
+        for(int j=0; j<s.length(); j++) {   
+            if(valid(s[j])) {
+                temp.push_back(s[j]);
+            }
+        }
+        
+        //lowercase me kardo
+        for(int j=0; j<temp.length(); j++) { 
+            temp[j] = toLowerCase(temp[j]);
+        }
+        
+        //check palindrome
+        return checkPalindrome(temp);
+        
+    }
+};
