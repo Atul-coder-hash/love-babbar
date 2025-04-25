@@ -1,3 +1,5 @@
+                                                        # Sir code
+
 #include<iostream>
 using namespace std;
 
@@ -8,11 +10,10 @@ char getocccharacter(string s)
        // create an array of count of character
        for(int i=0;i<s.length();i++)
        {
-              char ch=s[i];
-              //lowercase
+              
               int number =0;
-              number=ch-'a';
-              arr[number]++;
+              number=s[i]-'a';       // changing every character to number
+              arr[number]++;         
        }
        
        //find maximum occ character
@@ -41,5 +42,50 @@ int main()
        cout<<getocccharacter(s)<<endl;
        
        
+       
+}
+
+
+                                                        #My code
+#include<iostream>
+using namespace std;
+
+
+char getmaxocc(string s)
+{
+       
+       int arr[26]={0};
+       
+       for(int i=0;i<s.length();i++)
+       {
+              int number=0;
+              number=s[i]-'a';
+              
+              arr[number]++;
+              
+       }
+       
+       int maxi=0;
+       int ans=0;
+       for(int i=0;i<26;i++)
+       {
+              if(maxi<arr[i])
+              {
+                  ans=i;
+                  maxi=arr[i];
+              }
+       }
+       return 'a'+ans;
+       
+}
+
+int main()
+{
+       string s;
+       
+       cout<<"enter word:-";
+       cin>>s;
+       
+       cout<<"Maximum occuring character:-"<<getmaxocc(s);       
        
 }
