@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+
+int compress(string s)
+{
+       int i=0;
+       int ansindex=0;
+       int n= s.size();
+       
+       while(i<n)
+       {
+              
+              int j=i+1;
+              while(j<n &&s[i]==s[j])
+              {
+                     j++;
+              }
+              
+              //yaha kab aaoge
+              //ya toh string poora travesrse kr dia
+              //ya fer new/ different character encounter kia hai
+              
+              //old charater store karlo
+              
+              s[ansindex++]==s[i];
+              int count=j-i;
+              if(count>1)
+              {
+                     //converting counting into single digit and saving in answer
+                     
+                     string cnt= to_string(count);
+                     for(char ch:cnt)
+                     {
+                            s[ansindex++]=ch;
+                     }
+                     // Moving to new/diiferent character
+                     i=j;
+                     
+              }
+              cout<<s[i];
+       return ansindex;
+              
+       }
+}
+
+int main()
+{
+       string s;
+       cout<<"enter:-";
+       cin>>s;
+       cout<<compress(s);
+}
