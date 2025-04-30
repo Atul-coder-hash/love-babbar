@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+
+
+       int r,c;
+       cout<<"enter number of rows:-";
+       cin>>r;
+
+       cout<<"enter number of columns:-";
+       cin>>c;
+       
+       int matrix[r][c];
+       
+        int row = r;
+        int col = c;
+
+        int total = row * col;
+        int count = 0;
+
+        // initialise the indexes;
+        int startRow = 0;
+        int endCol = col - 1;
+        int endRow = row - 1;
+        int startCol = 0;
+
+        while(count < total){
+
+            //print startRow
+            for(int idx = startCol; count < total && idx <= endCol; idx++){
+                cin>>matrix[startRow][idx];
+                count++;
+            }
+            startRow++;
+
+            // print lastCol
+            for(int idx = startRow; count < total && idx <= endRow; idx++){
+                cin>>matrix[idx][endCol];
+                count++;
+            }
+            endCol--;
+
+            // print lastRow
+
+            for(int idx = endCol; count < total && idx >= startCol; idx--){
+               cin>>matrix[endRow][idx];
+                count++;
+            }
+            endRow--;
+
+            // print firstCol
+
+            for(int idx = endRow; count < total && idx >= startRow; idx--){
+                cin>>matrix[idx][startCol];
+                count++;
+            }
+            startCol++;
+        }
+
+        
+    for(int i=0;i<total;i++)
+    {
+           for(int j=0;i<total;j++)
+           {
+                  cout<<matrix[i][j];
+           }
+    }
+       
+}
