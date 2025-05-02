@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+ int main()
+ {
+        int num =5;
+        int *p = &num;
+        cout<<"address of p:-"<<p<<endl;
+        cout<<"value of p:-"<<*p<<endl;
+        
+        // copying pointer in another pointer
+        int *q = p;
+        
+        cout<<p<<"  -  "<<q<<endl;
+        cout<<*p<<"  -  "<<*q<<endl;
+ }
