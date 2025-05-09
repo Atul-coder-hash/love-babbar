@@ -1,3 +1,4 @@
+                                                                    solution 1
 #include<iostream>
 using namespace std;
 
@@ -12,6 +13,32 @@ int factorial(int n){
     int bigproblem = n*smallproblem;  // recursive relation
   
 return bigproblem;
+}
+
+int main()
+{
+    int n;
+    
+    cout<<"enter n:-";
+    cin>>n;
+    
+    cout<<factorial(n);
+    
+}
+                                                                solution 2
+#include<iostream>
+using namespace std;
+
+int factorial(int n){
+    
+    if(n==0)   // base case
+    {
+        return 1;
+        
+    }
+  
+  
+return n*factorial(n-1);// recursive relation
 }
 
 int main()
