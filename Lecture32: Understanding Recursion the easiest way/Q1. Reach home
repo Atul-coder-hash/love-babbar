@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+void reachhome(int src,int dest)
+{
+       if(src==dest)                // Base case
+       {  cout<<"Pauch gya !";    
+          return ;
+              
+       }
+          
+       src++;                      // Processing 
+       
+       
+       reachhome(src,dest);         //rescursive call
+       
+       
+
+}
+int main()
+{
+       int src=1;
+       int des=10;
+       
+       reachhome(src,des);
+       
+
+}
