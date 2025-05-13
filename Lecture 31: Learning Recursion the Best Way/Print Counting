@@ -3,11 +3,11 @@ using namespace std;
 
 void printing(int n)
 {
-       if(n==0)
+       if(n==0)   // base case
        {return ;}
        
        cout<<n<< " ";
-       printing(n-1);
+       printing(n-1);    // Recuesive relation
 
 }
 int main()
