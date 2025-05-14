@@ -8,7 +8,7 @@ void say(int n,string a[])
               return ;
        }
              
-              int digit=n%10;
+              int digit=n%10;   // processing
               
               n= n/10;
              
