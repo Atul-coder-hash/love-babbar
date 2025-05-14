@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+void say(int n,string a[])
+{
+       if(n==0)   // base case
+       {
+              return ;
+       }
+             
+              int digit=n%10;
+              
+              n= n/10;
+             
+              say(n,a);   // recursive calling
+              
+              cout<<a[digit]<<" ";
+             
+       
+       
+       
+}
+
+int main()
+{int n;
+
+string a[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
+
+cout<<"enter n:-";
+cin>>n;
+say(n,a);
+}
