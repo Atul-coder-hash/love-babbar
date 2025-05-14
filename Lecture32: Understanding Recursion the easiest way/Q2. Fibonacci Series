@@ -13,7 +13,7 @@ int fibonacci(int n )
               return 1; 
        }
        
-       int ans = fibonacci(n-1)+fibonacci(n-2);        // Recursive call
+       int ans = fibonacci(n-1)+fibonacci(n-2);        // Recursive call   // Recursive relation-> fibonacci(n)=fibonacci(n-1)+fibonacci(n-2)
        return ans;
 }
 
