@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+
+
+void reverse(string &s,int i,int j)// here use &s is used to work on address of s is sa apna ko return nhi karana pdaga kuch bhai
+{
+     if(i>j)  // base case
+     {
+            return ;
+     }
+     
+       swap(s[i],s[j]);
+       i++;
+       j--;
+       
+       reverse(s,i,j);  // Recursive call
+   
+       
+       
+      
+}
+
+ 
+int main()
+{      
+       string s="abcde";
+       int size =4;
+       
+       reverse(s,0,s.length()-1);
+       cout<<s;
+}
