@@ -1,0 +1,152 @@
+                                    #My solution
+
+#include<iostream>
+using namespace std;
+
+void quicksort(int *arr,int s,int e)
+{
+       int mid =(s+e)/2;
+       if(s>=e)
+       {
+              return ;
+       }
+       
+}
+
+void check(int *a,int   s,int e,int size)
+{      int b=0;
+       int c= size-1;
+       int no = a[0];
+       int count=0;
+       for(int i=0;i<size;i++)
+       {
+              if(a[i]<no)
+              {
+                     count++;
+              } 
+       }
+       
+       swap(a[0],a[count]);// a[0] ka index ki value ko uski right place pa rakha ha
+       
+       for(int i=0;i<size;i++)
+       {
+              if(a[b]<count&&a[c]>count)   
+              {
+                     b++;
+                     c--;
+              }
+              else
+              {
+                     swap(a[b],a[c]);
+              }
+       }
+       quicksort(a,s,count);
+       
+       quicksort(a,count+1,e);
+       
+}
+
+int main()
+{
+       int a[6]={3,5,1,8,2,4};
+       int size =6;
+       check(a,0,5,6);
+       for(int i=0;i<size;i++)
+       {
+              cout<<a[i];
+       }
+      
+       
+}
+
+                                          # Sir solution
+
+#include<iostream>
+using namespace std;
+
+
+int partition( int arr[], int s, int e) {
+
+    int pivot = arr[s];
+
+    int cnt = 0;
+    for(int i = s+1; i<=e; i++) {
+        if(arr[i] <=pivot) {
+            cnt++;
+        }
+    }
+
+    //place pivot at right position
+    int pivotIndex = s + cnt;
+    swap(arr[pivotIndex], arr[s]);
+
+    //left and right wala part smbhal lete h 
+    int i = s, j = e;
+
+    while(i < pivotIndex && j > pivotIndex) {
+
+        while(arr[i] <= pivot) 
+        {
+            i++;
+        }
+
+        while(arr[j] > pivot) {
+            j--;
+        }
+
+        if(i < pivotIndex && j > pivotIndex) {
+            swap(arr[i++], arr[j--]);
+        }
+
+    }
+    
+           for(int i=0;i<e;i++)
+       {
+              if(a[b]<count&&a[c]>count)   
+              {
+                     b++;
+                     c--;
+              }
+              else
+              {
+                     swap(a[b],a[c]);
+              }
+       }
+
+
+    return pivotIndex;
+
+}
+
+void quickSort(int arr[], int s, int e) {
+
+    //base case
+    if(s >= e) 
+        return ;
+
+    //partitioon karenfe
+    int p = partition(arr, s, e);
+
+    //left part sort karo
+    quickSort(arr, s, p-1);
+
+    //right wala part sort karo
+    quickSort(arr, p+1, e);
+
+}
+
+int main() {
+
+    int arr[10] = {2,4,1,6,9 ,9,9,9,9,9};
+    int n = 10;
+
+    quickSort(arr, 0, n-1);
+
+    for(int i=0; i<n; i++) 
+    {
+        cout << arr[i] << " ";
+    } cout << endl;
+
+
+    return 0;
+}
