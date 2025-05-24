@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+void printing(const string& s)
+{
+    for (char c : s)
+    {
+        cout << "[" << c << "]";
+    }
+    cout << endl;
+}
+
+void permutation(string s, int index)
+{
+    int size = s.length();
+
+    // Base case
+    if (index == size)
+    {
+        printing(s);
+        return;
+    }
+
+    // Try all characters at current index
+    for (int i = index; i < size; i++)
+    {
+        swap(s[i], s[i]);           // fix one character
+        permutation(s, index + 1);      // recurse for the rest
+        swap(s[index], s[i]);           // backtrack
+    }
+}
+
+int main()
+{
+    string s = "abc";
+    permutation(s, 0);
+    return 0;
+}
