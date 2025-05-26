@@ -99,20 +99,6 @@ int partition( int arr[], int s, int e) {
         }
 
     }
-    
-           for(int i=0;i<e;i++)
-       {
-              if(a[b]<count&&a[c]>count)   
-              {
-                     b++;
-                     c--;
-              }
-              else
-              {
-                     swap(a[b],a[c]);
-              }
-       }
-
 
     return pivotIndex;
 
