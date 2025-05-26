@@ -1,3 +1,4 @@
+
 #include<iostream>
 using namespace std;
 
@@ -48,10 +49,16 @@ int main() {
    
    //dynamically allocation
    Hero *b = new Hero;
-   b->setLevel('A');
-   b->setHealth(70);
-   cout<<"level is "<<(*b).level<<endl;
-   cout<<"health is "<<(*b).getHealth()<<endl;        
-   cout<<"level is "<<b->level<<endl;
-   cout<<"health is "<<b->getHealth()<<endl;
+   
+   b->setLevel('A');   // you can set like this 
+   (*b).setLevel('A');  // you can set like this 
+   
+   b->setHealth(70);   // you can set like this  
+   (*b).setHealth(70); // you can set like this 
+   
+   cout<<"level is "<<(*b).level<<endl;          // you can access like this
+   cout<<"health is "<<(*b).getHealth()<<endl;   // you can access like this
+   
+   cout<<"level is "<<b->level<<endl;            // you can access like this
+   cout<<"health is "<<b->getHealth()<<endl;     // you can access like this
 }
