@@ -1,0 +1,25 @@
+
+#include<iostream>
+using namespace std;
+
+class Hero {
+   
+
+    public:
+ 
+    char level;
+    
+    static int timetocomplete ;   // static keyword
+    
+    
+};
+
+int Hero::timetocomplete =5;   // initialisation
+
+  
+
+int main() {
+
+
+cout<<Hero::timetocomplete ;   
+}
