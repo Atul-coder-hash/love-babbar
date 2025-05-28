@@ -1,0 +1,32 @@
+
+#include<iostream>
+using namespace std;
+
+class Human {
+   
+public:
+       
+       int age;
+       int weight;
+    public:
+    void speak()
+    {
+           cout<<"Speak"<<endl;
+    }
+    
+    
+};
+
+class Male : public Human
+{
+      
+};
+
+int main() {
+Male ob;
+
+ob.speak();
+
+
+
+}
