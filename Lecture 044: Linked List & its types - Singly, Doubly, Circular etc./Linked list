@@ -6,7 +6,7 @@ class node{
   
     public:
     int data;
-    node *next;
+    node *next;      // pointer
     
     // constructor
     node(int data)
@@ -21,7 +21,7 @@ class node{
 
 int main() {
 
-node *node1 = new node(10);
+node *node1 = new node(10);    // dynamic allocation of object
 cout<<node1->data<<endl;
 cout<<node1->next<<endl;
        
