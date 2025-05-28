@@ -1,0 +1,35 @@
+
+#include<iostream>
+using namespace std;
+
+class B{
+  
+    public:
+    int a;
+    int b;
+    
+    int add()
+    {
+           return a+b;
+           
+    }
+    void operator +(B obj)
+    {
+           int val1=this-> a;
+           int val2=obj.a;
+           cout<<"Output:-"<<val2-val1<<endl;
+           
+    }
+    
+};
+
+
+int main() {
+
+B ob1,ob2;
+
+ob1.a=4;
+ob2.a=7;
+
+ob1+ob2;
+}
