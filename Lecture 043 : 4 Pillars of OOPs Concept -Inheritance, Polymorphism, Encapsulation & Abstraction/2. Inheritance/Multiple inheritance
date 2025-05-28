@@ -1,0 +1,35 @@
+
+#include<iostream>
+using namespace std;
+
+class A{
+   
+public:
+       
+       int age;
+       int weight;
+    public:
+    void speak()
+    {
+           cout<<"Speak"<<endl;
+    }
+    
+    
+};
+
+class B :public A
+{
+};
+
+class c:public B {
+       
+};
+
+int main() {
+c ob;
+
+ob.speak();
+
+
+
+}
