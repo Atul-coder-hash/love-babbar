@@ -1,0 +1,30 @@
+
+#include<iostream>
+using namespace std;
+
+class Hero {
+   
+
+    public:
+ 
+    char level;
+    
+    static int timetocomplete ;   // static keyword
+    
+    static int random()          // static function
+    {
+           return timetocomplete;
+    }
+    
+    
+};
+
+int Hero::timetocomplete =5;   // initialisation
+
+  
+
+int main() {
+
+
+cout<<  Hero::random();
+}
