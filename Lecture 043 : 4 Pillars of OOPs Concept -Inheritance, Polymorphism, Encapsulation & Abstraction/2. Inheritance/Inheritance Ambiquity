@@ -1,0 +1,46 @@
+
+#include<iostream>
+using namespace std;
+
+class A{
+  
+    public:
+    void fun()
+    {
+           cout<<"A"<<endl;
+    }
+    
+    
+};
+
+class B{
+  
+    public:
+    void fun()
+    {
+           cout<<"B"<<endl;
+    }
+    
+    
+};
+
+class C:public A,public B{
+  
+    public:
+    void fun()
+    {
+           cout<<"A"<<endl;
+    }
+    
+    
+};
+
+int main() {
+
+C ob1;
+
+ob1.A::fun();            // inheritance ambiquity
+cout<<endl;
+ob1.B::fun();             // inheritance ambiquity
+
+}
