@@ -1,0 +1,79 @@
+
+#include<iostream>
+using namespace std;
+
+class A{
+  
+    public:
+    void speak()
+    {
+           cout<<"A"<<endl;
+    }
+    
+    
+};
+
+class B:public A 
+{
+       public:
+       void show()
+       {
+              cout<<" inherited from A";
+       }
+      
+};
+
+
+class C: public A{
+       public:
+       void show()
+       {
+              cout<<"inherited from A";
+       }
+       
+};
+
+class E: public B{
+          public:
+       void show()
+       {
+              cout<<" inherited from B";
+       }
+};
+
+class F: public B{
+          public:
+       void show()
+       {
+              cout<<" inherited from B";
+       }
+};
+
+
+class H: public C{
+          public:
+       void show()
+       {
+              cout<<" inherited from c";
+       }
+};
+
+class G: public C{
+          public:
+       void show()
+       {
+              cout<<" inherited from C";
+       }
+};
+
+
+int main() {
+
+B ob1;
+ob1.show();
+cout<<endl;
+
+G ob2;
+ob2.show();
+
+}
