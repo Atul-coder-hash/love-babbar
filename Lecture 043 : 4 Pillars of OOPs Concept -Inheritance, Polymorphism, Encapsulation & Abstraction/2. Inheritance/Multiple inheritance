@@ -1,0 +1,42 @@
+
+#include<iostream>
+using namespace std;
+
+class A{
+   
+public:
+       
+       int age;
+       int weight;
+    public:
+    void speak()
+    {
+           cout<<"Speak"<<endl;
+    }
+    
+    
+};
+
+class B 
+{
+       public:
+       void bark()
+       {
+              cout<<"Bark";
+       }
+};
+
+// Multiple inheritance
+class c: public A,public B{
+       
+};
+
+int main() {
+c ob;
+
+ob.speak();
+ob.bark();
+
+
+
+}
