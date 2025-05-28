@@ -1,0 +1,48 @@
+
+#include<iostream>
+using namespace std;
+
+class Human {
+   
+public:
+       int height=10;
+       int age;
+       int weight;
+    public:
+    int getage()
+    
+    {
+           return this->age;
+    }
+    
+    int setweight(int w)
+    {
+           return this->weight=w;
+    }
+};
+
+class Male : public Human
+{
+       public:
+       string color="red" ;
+       void sleep()
+       {
+              cout<<"Male sleeping";
+       }
+       int setheight(int h)
+       {
+           return   this->height=h;
+       }
+};
+
+int main() {
+Male ob;
+cout<<ob.height<<endl;  
+cout<<ob.weight<<endl;
+cout<<ob.age<<endl;
+cout<<ob.color<<endl;
+ob.sleep();
+
+
+
+}
