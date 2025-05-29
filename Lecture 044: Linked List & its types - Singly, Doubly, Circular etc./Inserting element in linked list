@@ -145,7 +145,12 @@ void insertathead(node* &head,int d)
 
 
 void insertatposition(node* & head,int position,int d) 
-{
+{        if(position == 1)
+       {
+              insertathead(head,d);
+              return ;
+       }
+
        node* temp = head;
        int cnt=1;
        while(cnt<position-1){
@@ -189,7 +194,7 @@ insertathead(head,12);
 insertathead(head,14);
 
 
-insertatposition(head,3,22);    // inserting element at input position
+insertatposition(head,1,22);    // inserting element at input position
 print(head);
        
        
