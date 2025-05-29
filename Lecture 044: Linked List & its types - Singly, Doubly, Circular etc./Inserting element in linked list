@@ -1,4 +1,4 @@
-
+                                       # At head #
 #include<iostream>
 using namespace std;
 
@@ -58,3 +58,141 @@ print(head);
        
        
 }
+
+                                  # At Tail #
+#include<iostream>
+using namespace std;
+
+
+class linkedlist
+{
+       public:
+              int value;
+              linkedlist  *next;   // pointer
+              
+              linkedlist(int value)
+              {
+                     this-> value = value;
+                     this-> next = NULL;
+              }
+              
+};
+
+void print(linkedlist* &head)  // this i 
+{
+       linkedlist *temp =head;
+       while(temp!=NULL)
+       {
+              cout<<temp->value<<" ";
+              temp = temp->next;
+       }
+       
+}
+
+
+void insertattail(linkedlist* &tail,int d)
+{
+       linkedlist* temp = new linkedlist(d);
+       tail->next = temp;
+       tail = temp;
+}
+int main()
+{
+       linkedlist *node = new linkedlist(10);
+       // cout<<node->value<<endl;
+       // cout<<node->next<<endl;
+       
+       linkedlist *head = node;
+       //print(node1);
+       linkedlist *tail = node;
+       
+       
+       insertattail(tail,12);
+       insertattail(tail,14);
+       print(head);
+       
+       
+}
+
+                                                # At center#
+
+#include<iostream>
+using namespace std;
+
+class node{
+  
+    public:
+    int data;
+    node *next;
+    
+    // constructor
+    node(int data)
+    {
+           this->data = data;
+           this->next= NULL;
+           
+    }
+
+};
+
+void insertathead(node* &head,int d)
+{
+       //new node creation
+       node *temp = new node(d);     // data of temp =d 
+       temp->next = head;            // next of temp = address of head object
+       head = temp;                  // head = address of temp
+}
+
+
+void insertatposition(node* & head,int position,int d) 
+{
+       node* temp = head;
+       int cnt=1;
+       while(cnt<position-1){
+              temp = temp->next;
+              cnt++;
+              
+       }
+       // creating a node for d
+       node* nodetoinsert = new node(d);
+       
+       nodetoinsert ->next = temp->next;
+       temp->next = nodetoinsert;
+       
+}
+void print(node* &head)      // passing object as argument
+{
+       node* temp = head;    // create a object temp of dynamic type and copy the value of head in temp
+       
+       while(temp!=NULL)
+       {
+              cout<<temp->data<<" ";
+              temp = temp ->next;
+             
+       }
+}
+
+
+int main() {
+
+// create a new node
+node *node1 = new node(10);   // create a object node 1 of dynamic type
+// cout<<node1->data<<endl;
+// cout<<node1->next<<endl;
+       
+// head pointed to node1 
+node* head = node1;           // create a object head of dynamic type and copy the value of node1 in head
+//print(head);                 // this function helps to traverse the loop and print the values
+cout<<endl;
+
+insertathead(head,12);
+insertathead(head,14);
+
+
+insertatposition(head,3,22);    // inserting element at input position
+print(head);
+       
+       
+       
+}
+                          
