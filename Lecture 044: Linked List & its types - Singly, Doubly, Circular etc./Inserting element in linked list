@@ -116,6 +116,7 @@ int main()
 
                                                 # At center#
 
+
 #include<iostream>
 using namespace std;
 
@@ -143,14 +144,21 @@ void insertathead(node* &head,int d)
        head = temp;                  // head = address of temp
 }
 
+void insertattail(node* &tail,int d)
+{
+       node* temp = new node(d);
+       tail->next = temp;
+       tail = temp;
+}
 
-void insertatposition(node* & head,int position,int d) 
-{        if(position == 1)
+void insertatposition(node* &tail,node* & head,int position,int d) 
+{
+       // insert at start
+       if(position == 1)
        {
               insertathead(head,d);
               return ;
        }
-
        node* temp = head;
        int cnt=1;
        while(cnt<position-1){
@@ -158,6 +166,14 @@ void insertatposition(node* & head,int position,int d)
               cnt++;
               
        }
+       
+       // insert at last
+       if(temp->next ==NULL)
+       {
+              insertattail(tail,d);
+              return ;
+       }
+       
        // creating a node for d
        node* nodetoinsert = new node(d);
        
@@ -187,17 +203,18 @@ node *node1 = new node(10);   // create a object node 1 of dynamic type
        
 // head pointed to node1 
 node* head = node1;           // create a object head of dynamic type and copy the value of node1 in head
+node *tail = node1;
 //print(head);                 // this function helps to traverse the loop and print the values
 cout<<endl;
 
 insertathead(head,12);
 insertathead(head,14);
+insertattail(tail,20);
 
 
-insertatposition(head,1,22);    // inserting element at input position
+insertatposition(tail,head,5,22);
 print(head);
        
        
        
 }
-                          
