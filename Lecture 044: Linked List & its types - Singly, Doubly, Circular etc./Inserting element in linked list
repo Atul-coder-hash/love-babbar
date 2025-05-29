@@ -21,14 +21,14 @@ class node{
 void insertathead(node* &head,int d)
 {
        //new node creation
-       node *temp = new node(d);
-       temp->next = head;
-       head = temp;
+       node *temp = new node(d);     // data of temp =d 
+       temp->next = head;            // next of temp = address of head object
+       head = temp;                  // head = address of temp
 }
 
-void print(node* &head)
+void print(node* &head)      // passing object as argument
 {
-       node* temp = head;
+       node* temp = head;    // create a object temp of dynamic type and copy the value of head in temp
        
        while(temp!=NULL)
        {
@@ -40,14 +40,15 @@ void print(node* &head)
 
 
 int main() {
+
 // create a new node
-node *node1 = new node(10);
+node *node1 = new node(10);   // create a object node 1 of dynamic type
 // cout<<node1->data<<endl;
 // cout<<node1->next<<endl;
        
-// head pointed to node1
-node* head = node1;
-print(head);
+// head pointed to node1 
+node* head = node1;           // create a object head of dynamic type and copy the value of node1 in head
+print(head);                 // this function helps to traverse the loop and print the values
 cout<<endl;
 
 insertathead(head,12);
