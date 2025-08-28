@@ -1,3 +1,5 @@
+                                                            #  INSERT ONLY ONE ELEMENT
+
 #include<iostream>
 using namespace std;
 
@@ -23,4 +25,49 @@ for(int i=0;i<size;i++)
     cout<<a[i]<<" ";
 }
    
+}
+
+
+                                                        # INSERT ELEMENT ON MULTIPLE PLACE
+
+#include<iostream>
+using namespace std;
+
+
+void print(int a[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cout<<a[i]<<" "; 
+    }
+    
+}
+void insertelement(int a[],int n,int ind,int size,int max)
+{
+    for(int i=size-1;i>ind;i--)
+    {
+        a[i]=a[i-1];
+    }
+        a[ind]=n;
+    
+    
+    print(a,size);
+    cout<<endl;
+}
+
+
+int main()
+{
+int a[10]={10, 20, 30, 40, 50};
+int size =6;
+
+int n1=25;
+int ind1=2;
+
+int n2=45;
+int ind2=5;
+
+insertelement(a,n1,ind1,6,10);
+insertelement(a,n2,ind2,7,10);
+
 }
